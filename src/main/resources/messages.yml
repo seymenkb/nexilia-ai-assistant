@@ -1,0 +1,43 @@
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+#   Nexilia AI Assistant - Mesajlar
+#   Renk kodlari icin '&' kullanin.
+#   Placeholder'lar: {file} {setting} {description} {question} {count} {time}
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+prefix: "&b[Nexilia AI] &r"
+
+no-permission: "&cBu komutu kullanma izniniz yok. (nexai.admin)"
+
+usage: "&eKullanim: /nexai <soru>  |  /nexai reindex  |  /nexai reload"
+
+thinking: "&7Sorgunuz analiz ediliyor, lutfen bekleyin..."
+
+reindex-start: "&7Dosyalar yeniden taraniyor..."
+reindex-done: "&aIndeksleme tamamlandi! &7({count} dosya, {time}ms)"
+
+reload-done: "&aConfig ve mesajlar yeniden yuklendi."
+
+# Ana cevap formati - AI bir sonuc bulup dosya/ayar eslestirebildiginde kullanilir.
+answer-format: |
+  &b📁 Dosya:
+  &f{file}
+  &b⚙ Ayar:
+  &f{setting}
+  &b💡 Aciklama:
+  &f{description}
+
+# AI bir sey degistirmeyi onerdiginde araya eklenen soru (otomatik degisiklik YAPILMAZ).
+suggest-change: "&e➤ Bu ayari degistirmemi ister misin? (Manuel onay gerekir, otomatik degisiklik yapilmaz)"
+
+# Ilgili dosya bulunamadi / AI cevap veremedi.
+not-found: |
+  &cBu bilgi bulunamadi. Su dosyalari kontrol etmelisin:
+  &7{file}
+
+not-found-generic: "&cBu konuyla ilgili indekste eslesen bir dosya bulunamadi. '/nexai reindex' calistirip tekrar deneyin."
+
+api-error: "&cOpenAI API'ye ulasilamadi. API anahtarinizi ve internet baglantisini kontrol edin."
+
+api-key-missing: "&cconfig.yml icinde OpenAI API anahtari ayarlanmamis!"
+
+console-not-supported: "&cBu komut sadece oyun ici oyuncular tarafindan kullanilabilir."

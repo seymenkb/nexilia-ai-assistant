@@ -1,0 +1,83 @@
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+#   Nexilia AI Assistant - Config
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+# OpenAI API Key (https://platform.openai.com/account/api-keys)
+openai-api-key: "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# Kullanilacak model (ucuz/hizli: gpt-4o-mini onerilir)
+model: "gpt-4o-mini"
+
+# Cevap uzunlugu limiti (token). Kucuk tutmak = az maliyet.
+max-tokens: 500
+
+temperature: 0.2
+
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+#   Tarama (Indexer) Ayarlari
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+scanner:
+  # Sunucu baslangicinda otomatik index olustur.
+  # false yaparsan sadece /nexai reindex ile manuel taranir (en dusuk RAM/CPU).
+  scan-on-startup: true
+
+  # Sadece bu dosya adlari taranir (uzanti farketmeksizin tam ad eslesmesi).
+  allowed-filenames:
+    - "config.yml"
+    - "messages.yml"
+    - "lang.yml"
+    - "permissions.yml"
+    - "settings.yml"
+    - "server.properties"
+    - "paper.yml"
+    - "paper-global.yml"
+    - "paper-world-defaults.yml"
+    - "spigot.yml"
+    - "bukkit.yml"
+
+  # Taranacak kok dizinler (sunucu ana dizinine gore relatif).
+  include-paths:
+    - "plugins"
+    - "server.properties"
+    - "paper.yml"
+    - "spigot.yml"
+    - "bukkit.yml"
+    - "config"
+
+  # Bu klasor adlari asla taranmaz (world klasorleri ve gereksiz agir klasorler).
+  excluded-folders:
+    - "world"
+    - "world_nether"
+    - "world_the_end"
+    - "playerdata"
+    - "stats"
+    - "advancements"
+    - "region"
+    - "poi"
+    - "entities"
+    - "cache"
+    - "logs"
+
+  # level.dat iceren klasorler world kabul edilip otomatik atlanir (guvenlik agi).
+  skip-world-folders: true
+
+  # Tek dosyada okunacak maksimum boyut (KB). Buyuk dosyalar kirpilir.
+  max-file-size-kb: 200
+
+  # Indekste tutulacak toplam maksimum dosya sayisi (RAM korumasi).
+  max-indexed-files: 300
+
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+#   Soru Basina Baglam (Prompt) Ayarlari
+# ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+prompt:
+  # Bir soruda AI'a gonderilecek en alakali dosya sayisi (token tasarrufu icin dusuk tutulur).
+  max-relevant-files: 3
+
+  # Her dosyadan AI'a gonderilecek maksimum karakter (icerik kirpma).
+  max-chars-per-file: 1500
+
+# Loglar klasorunden son N satir okunur (sadece istek uzerine, otomatik degil).
+logs:
+  enabled: true
+  max-lines: 150

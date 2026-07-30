@@ -1,0 +1,19 @@
+name: NexiliaAIAssistant
+version: '1.0.0'
+main: com.nexilia.aiassistant.NexiliaAIAssistant
+api-version: '1.20'
+load: STARTUP
+author: Nexilia Network
+description: Sunucu plugin dosyalarini indeksleyip OpenAI ile analiz eden yardimci asistan.
+
+commands:
+  nexai:
+    description: Nexilia AI Assistant - sunucu config/plugin sorulari sorun
+    usage: "/nexai <soru> | /nexai reindex | /nexai reload"
+    permission: nexai.admin
+    permission-message: "&cBu komutu kullanma izniniz yok. (nexai.admin)"
+
+permissions:
+  nexai.admin:
+    description: Nexilia AI Assistant'i kullanma izni
+    default: op
